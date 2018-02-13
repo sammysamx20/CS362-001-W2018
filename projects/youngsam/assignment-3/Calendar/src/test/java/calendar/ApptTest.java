@@ -458,15 +458,12 @@ public class ApptTest {
 		  int startYear = 2018;
 		  String title = "boo";
 		  String description = "yay";
-
-		  // Construct a new Appointment object with the initial data
 		  Appt appt = new Appt(startHour, startMinute, startDay, startMonth, startYear, title, description);
 		  assertEquals(0, appt.getRecurDays().length);
 		  Appt appt2 = new Appt(startHour, startMinute, startDay, startMonth, startYear, title, description);
-
 		  int[] recurDaysArr=null;
 		  appt.setRecurrence(recurDaysArr, appt.RECUR_BY_YEARLY, 2, 4);
-		  //int[] occurDates = appt.getRecurDays();
+	
 		  assertEquals(0, appt.getRecurDays().length);
 
 	  }
@@ -507,7 +504,6 @@ public class ApptTest {
 					 description);
 
 
-		  /* Testing Start Hour */
 	  	  assertFalse(appt.testIsValid());
 		  appt.setStartHour(24);
 		  assertFalse(appt.testIsValid());
@@ -515,8 +511,6 @@ public class ApptTest {
 		  assertTrue(appt.testIsValid());
 		  appt.setStartHour(23);
 		  assertTrue(appt.testIsValid());
-
-		  /* Testing Start Minute */
 		  appt.setStartMinute(-1);
 		  assertFalse(appt.testIsValid());
 		  appt.setStartMinute(60);
@@ -525,10 +519,7 @@ public class ApptTest {
 		  assertTrue(appt.testIsValid());
 		  appt.setStartMinute(59);
 		  assertTrue(appt.testIsValid());
-
-		  int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth-1);
-
-		  /* Testing Start Day */
+		  int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth-1);		
 		  appt.setStartDay(0);
 		  assertFalse(appt.testIsValid());
 		  appt.setStartDay(40);
@@ -537,8 +528,6 @@ public class ApptTest {
 		  assertTrue(appt.testIsValid());
 		  appt.setStartDay(NumDaysInMonth);
 		  assertTrue(appt.testIsValid());
-
-		  /* Testing Start Month */
 		  appt.setStartMonth(1);
 		  assertTrue(appt.testIsValid());
 		  appt.setStartMonth(12);
@@ -555,7 +544,7 @@ public class ApptTest {
 		  int startYear=2018;
 		  String title="lmao";
 		  String description="ayyy.";
-		  //Construct a new Appointment object with the initial data
+		
 		  Appt appt = new Appt(startHour,
 				  startMinute ,
 				  startDay ,

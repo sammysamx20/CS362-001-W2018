@@ -207,20 +207,16 @@ public class TimeTableTest {
 	 }
 	 @Test
 	  public void test06()  throws Throwable  {
-		 boolean diagnose = true;
+		 boolean tester = true;
 
-			/** Collection of all of the appointments for the calendar day */		
+					
 			LinkedList<Appt> listAppts = new LinkedList<Appt>();
 			System.out.println("Calendar Main: \n" );
 			
-			
-	     	/** the month the user is currently viewing **/
 	     	int thisMonth;
 	    	
-	    	/** the year the user is currently viewing **/
 	    	 int thisYear;
-	    	
-	    	/** todays date **/
+	    
 	    	int thisDay;
 	    	
 			//get todays date
@@ -245,7 +241,7 @@ public class TimeTableTest {
 	                  startYear ,
 	                  title,
 	                 description);
-	          if(diagnose){
+	          if(tester){
 	          	System.out.println(appt.toString());
 	          } 
 	         
@@ -268,7 +264,7 @@ public class TimeTableTest {
 	                  title,
 	                 description);
 	        
-	         if(diagnose){
+	         if(tester){
 	         	System.out.println(appt.toString());
 	         }
 	         listAppts.add(appt);
@@ -289,7 +285,7 @@ public class TimeTableTest {
 	                  title,
 	                 description);
 	         
-	         if(diagnose){
+	         if(tester){
 	         	System.out.println(appt.toString());
 	         }
 	         listAppts.add(appt);
@@ -312,32 +308,26 @@ public class TimeTableTest {
 	         int[] recurDaysArr={2,3,4};
 	         appt.setRecurrence( recurDaysArr, Appt.RECUR_BY_WEEKLY, 2, Appt.RECUR_NUMBER_FOREVER);
 	        
-	         if(diagnose){
+	         if(tester){
 	         	System.out.println(appt.toString());
 	         }
 	         listAppts.add(appt);
-	 		if(diagnose){
+	 		if(tester){
 				System.out.println("The Appointments are not sorted!");
 	         	System.out.println(listAppts.toString());
-		
 	            Collections.sort(listAppts);
 				System.out.println("The Appointments are sorted!");
 	         	System.out.println(listAppts.toString());
 	            
 	 		
 	 		}
-
-
-
-	         
-			
 			GregorianCalendar today = new GregorianCalendar(thisYear,thisMonth,thisDay);
 			GregorianCalendar tomorrow = (GregorianCalendar)today.clone();
 			tomorrow.add(Calendar.DAY_OF_MONTH,1);
 			String todatDate=today.get(Calendar.MONTH)+ "/"+ today.get(Calendar.DAY_OF_MONTH)+"/"+today.get(Calendar.YEAR);
 			String tomorrowDate=tomorrow.get(Calendar.MONTH)+ "/"+ tomorrow.get(Calendar.DAY_OF_MONTH)+"/"+tomorrow.get(Calendar.YEAR);
 
-			if(diagnose){
+			if(tester){
 				System.out.println("today is:" + todatDate);
 				System.out.println("tomorrow is:" + tomorrowDate);
 			}
@@ -348,7 +338,7 @@ public class TimeTableTest {
 
 			
 	 		
-			if (diagnose) {
+			if (tester) {
 		
 
 				System.out.println("The number of appointments between "+ todatDate +" and " + tomorrowDate);

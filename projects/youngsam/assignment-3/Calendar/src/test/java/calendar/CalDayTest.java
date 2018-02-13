@@ -98,7 +98,6 @@ public class CalDayTest {
 	 int thisYear = 2018;
 	 int thisMonth = 11;
 	 int thisDay = 21;
-	 
 	GregorianCalendar today = new GregorianCalendar(thisYear, thisMonth, thisDay);
 	 CalDay calday = new CalDay(today);
 	 calday.getDay();
@@ -115,12 +114,10 @@ public class CalDayTest {
 				 "Unidds", "fdsa");
 		 calday.addAppt(hi);
 		 Appt d = new Appt(16, 1,27,7,2018,
-				 "Man","Magical");
+				 "the","fire");
 		 calday.addAppt(d);
 
 		 LinkedList<Appt> list1 = calday.getAppts();
-
-		 // Checks if appointments are in the list of appointments
 		 assertTrue(list1.contains(hi));
 		 assertTrue(list1.contains(d));
 
@@ -135,7 +132,7 @@ public class CalDayTest {
 	 }
 	 @Test
 		public void test11()	throws Throwable   {
-			GregorianCalendar today = new GregorianCalendar(2018, 7, 27);
+			GregorianCalendar today = new GregorianCalendar(2018, 8, 15);
 			CalDay calday = new CalDay(today);
 
 			calday.iterator();
