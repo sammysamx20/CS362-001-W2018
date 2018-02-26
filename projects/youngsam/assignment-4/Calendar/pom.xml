@@ -70,6 +70,7 @@
 	<configuration>
 	  <avoidCallsTo>
 	    <!--
+
 A List of packages, classes and methods which are to be considered outside the scope of mutation.
 	    -->
 	    <avoidCallsTo>java.io.PrintStream</avoidCallsTo>
