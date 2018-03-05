@@ -1,0 +1,6 @@
+Bug-Reports:
+There were a couple of bugs in the code that he added to the assignments. For example, on line 115 of the Appt.java in the isValid Method, he changed the value of the starting hour. This bug caused the console to print out some nulls in the list. This is because this is part of the checker, and since some of the values are out of range it causes the appointments to be invalid even though it should be valid. I found this by using some of my tests and that it changed some of the assertEquals to fail.
+
+Another bug was in the getApptRange() in line 52 of the TimeTable.java. In this he changed the I = to appts.size or the indexing variable to that. This causes the initial integer to always equal appts.size() which makes it already finished in the loop. This causes the appointments to not be printed out. This caused some of my asserts to fail.
+
+Another one was in the TimeTable again with the method representationAppt(). This time he changed the line 284 where the decrement turned to 0. This made everything from a 12 hour time format to a 24 hour time format.
