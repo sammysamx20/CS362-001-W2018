@@ -43,7 +43,7 @@ public class TimeTable {
 	        
 	        //Create the first CalDay object with the starting date and add to list
 	        GregorianCalendar nextDay = (GregorianCalendar) firstDay.clone();
-	        while (nextDay.before(lastDay)) {//changed the nextday to last day and latday to nextday
+	        while (nextDay.before(lastDay)) {//changed the order back to correct
 
 	            calDays.add(new CalDay(nextDay));
 	          nextDay.add(nextDay.DAY_OF_MONTH, 1); 
@@ -210,7 +210,7 @@ public class TimeTable {
 	        for(int i=1;i<appts.size()-1;i++){
 	        	Appt tempAppt=appts.get(i);
 	        	if(tempAppt.equals(appt)){
-	        	//	appts.remove(i); //take out the removed appointments
+	        		appts.remove(i); //take out the removed appointments
 	        		return appts;
 	        	}
 	        		
